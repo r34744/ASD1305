@@ -1,0 +1,37 @@
+Users will start on the "main" page.
+    - Display ADD TEAMS Button
+    - Display RACE Button (default data will be put in for team names)
+    - Nav at bottom (HOME, TEAMS, RACE)
+
+Add Teams Page
+    - 6 Input text boxes will be displayed for the team names.
+    - Page has SAVE TEAMS button - to local storage
+    - Nav at bottom (HOME, TEAMS, RACE)
+    
+Teams Page
+    - Display Teams from local storage
+    - Edit button
+    - Nav at bottom (HOME, TEAMS, RACE)
+
+#1 Race Page
+    - Race Title on top
+    - Team names displayed in buttons to push for race result
+    - Save Race Button
+    - Reset Race button at bottom
+    - Next Race button
+    - Nav at bottom (HOME, TEAMS, RACE)
+    
+#2 Race Page
+    - Race Title on top
+    - Team names displayed in buttons to push for race result
+    - Save Race Button
+    - Reset Race button at bottom
+    - Previous Race button
+    - Next Race button
+    - Nav at bottom (HOME, TEAMS, RACE)
+    
+Results Page
+    - Edit Races Button
+    - Show Race Results Point Totals and Standings
+    - Nav at bottom (HOME, TEAMS, RACE)
+    
