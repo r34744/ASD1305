@@ -36,19 +36,10 @@
 			
 			<div data-role="content">
 				
-				<ul data-role="listview" data-inset="true"> 
-					<li>
-						<a href="#addTeams">
-							<h3>Add Team Names</h3>
-						</a>
-					</li>
-					<li>
-						<a href="#Race">
-							<h3>Start a Race</h3>
-						</a>
-					</li>
-					
-				</ul>
+				<p> <a href="#addTeams" data-role="button" >Add Teams</a></p>
+				<p> <a href="#Race" data-role="button" >Race</a> </p>
+				
+				
 			</div>
         
 		
@@ -95,10 +86,11 @@
 					</div>
 					<div data-role="fieldcontain">
 						<input type="reset" value="Reset" id="resetbutton" data-mini="true" data-theme="a"/>
+					
+					
 					</div>	
 				
-					<a href="#errors" id="errorlink" data-rel="dialog">Errors</a>
-					<a href="#saved" id="savedlink" data-rel="dialog">Saved</a>
+					
 					
 				</form>	
 			</div>
@@ -116,13 +108,161 @@
 			</div>
 		</div>	
 
+		
+<!-- RACE 1 -->		
+		<div data-role="page" id="Race" data-add-back-btn="true" >
+			<div data-role="header" data-position="fixed" >
+				<h1> <a href="index.html">X Race Day </a></h1>
+			</div>
+			
+			<div data-role="content">
+				<form action="" id="race1">
+					<div data-role="fieldcontain" >
+						<h2> Race #1 </h2>
+						<p>
+							<a href="#team1" data-role="button" data-inline="true">Team #1</a>
+							<a href="#team2" data-role="button" data-inline="true">Team #2</a>
+						</p>
+						<p>
+							<a href="#team1" data-role="button" data-inline="true">Team #3</a>
+							<a href="#team2" data-role="button" data-inline="true">Team #4</a>
+						</p>
+						<p>
+							<a href="#team1" data-role="button" data-inline="true">Team #5</a>
+							<a href="#team2" data-role="button" data-inline="true">Team #6</a>
+						</p>
+					</div>
+				
+				
+					<div data-role="fieldcontain">
+						<input type="submit" value="Submit" id="racesubmitbutton" data-theme="b"/>
+					</div>
+					<div data-role="fieldcontain">
+						<input type="reset" value="Reset" id="raceresetbutton" data-mini="true" data-theme="a"/>
+					<a href="#Race2" id="nextlink" >Next Race</a>
+					</div>	
+			
+				
+				</form>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" >
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#main" >Home</a></li>
+						<li><a href="#addTeams" >Teams</a></li>
+						<li><a href="#Race" class="ui-btn-active">Race</a></li>
+						<li><a href="#about" >About</a></li>
+					</ul>
+				</div>   
+			</div>	
+		</div>
 
+		
+<!-- RACE 2 -->		
+		<div data-role="page" id="Race2" data-add-back-btn="true" >
+			<div data-role="header" data-position="fixed" >
+				<h1> <a href="index.html">X Race Day </a></h1>
+			</div>
+			
+			<div data-role="content">
+				<form action="" id="race2">
+					<div data-role="fieldcontain" >
+						<h2> Race #2 </h2>
+						<p>
+							<a href="#team1" data-role="button" data-inline="true">Team #1</a>
+							<a href="#team2" data-role="button" data-inline="true">Team #2</a>
+						</p>
+						<p>
+							<a href="#team1" data-role="button" data-inline="true">Team #3</a>
+							<a href="#team2" data-role="button" data-inline="true">Team #4</a>
+						</p>
+						<p>
+							<a href="#team1" data-role="button" data-inline="true">Team #5</a>
+							<a href="#team2" data-role="button" data-inline="true">Team #6</a>
+						</p>
+					</div>
+				
+				
+					<div data-role="fieldcontain">
+						<input type="submit" value="Submit" id="racesubmitbutton" data-theme="b"/>
+					</div>
+					<div data-role="fieldcontain">
+						<input type="reset" value="Reset" id="raceresetbutton" data-mini="true" data-theme="a"/>
+					<p><a href="#Race" id="prevlink" >Previous Race</a> | 
+					<a href="#Results" id="resultslink" >Results</a></p>
+					</div>	
+			
+				
+				</form>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" >
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#main" >Home</a></li>
+						<li><a href="#addTeams" >Teams</a></li>
+						<li><a href="#Race" class="ui-btn-active">Race</a></li>
+						<li><a href="#about" >About</a></li>
+					</ul>
+				</div>   
+			</div>	
+		</div>		
+		
+<!-- Results -->		
+		<div data-role="page" id="Results" data-add-back-btn="true" >
+			<div data-role="header" data-position="fixed" >
+				<h1> <a href="index.html">X Race Day </a></h1>
+			</div>
+			
+			<div data-role="content">
+				<h2> Race Results </h2>
+				
+				<div class="ui-grid-b">
+					<div class="ui-block-a"><div class="ui-bar ui-bar-b" >School</div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-b" >Points</div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-b" >Place</div></div>
+					<div class="ui-block-a"><div class="ui-bar ui-bar-c" >Team 1</div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-c" >1000</div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-c" >1st</div></div>
+					<div class="ui-block-a"><div class="ui-bar ui-bar-c" >Team 2</div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-c" >900</div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-c" >2nd</div></div>
+					<div class="ui-block-a"><div class="ui-bar ui-bar-c" >Team 3</div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-c" >800</div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-c" >3rd</div></div>
+					<div class="ui-block-a"><div class="ui-bar ui-bar-c" >Team 4</div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-c" >700</div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-c" >4th</div></div>
+					<div class="ui-block-a"><div class="ui-bar ui-bar-c" >Team 5</div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-c" >600</div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-c" >5th</div></div>
+					<div class="ui-block-a"><div class="ui-bar ui-bar-c" >Team 6</div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-c" >500</div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-c" >6th</div></div>
+				</div><!-- /grid-c -->
+				
+				<p><a href="#Race" id="edit1" >Edit Race #1</a> | 
+				<a href="#Race2" id="edit2" >Edit Race #2</a></p>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" >
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#main" >Home</a></li>
+						<li><a href="#addTeams" >Teams</a></li>
+						<li><a href="#Race" class="ui-btn-active">Race</a></li>
+						<li><a href="#about" >About</a></li>
+					</ul>
+				</div>   
+			</div>	
+		</div>				
+		
 <!-- About Page --> 		
 		
-		<div data-role="page" id="page3" data-add-back-btn="true" style="background-image: url('img/wall.jpg'); background-attachment: fixed; background-repeat: no-repeat; background-size: 100% 100%;" >
+		<div data-role="page" id="about" data-add-back-btn="true" >
 			<div data-role="header" data-position="fixed" >
-				<h1>
-				<a href="index.html"><img src="img/boardcollection_white.png"/> </a></h1>
+				<h1> <a href="index.html">X Race Day </a></h1>
 			</div>
 				<div data-role="content">
 					<div data-role="collapsible-set">
@@ -132,21 +272,21 @@
 						</div>
 						<div data-role="collapsible" data-collapsed="true">
 							<h3>GH-Pages</h3>
-							<p><a href="https://github.com/r34744/MiU.git"> GitHub </a></p>
+							<p><a href="https://github.com/r34744/ASD1305.git"> GitHub </a></p>
 						</div>
 						<div data-role="collapsible" data-collapsed="true">
 							<h3>Live Site</h3>
-							<p><a href="http://r34744.github.com/MiU/"> GitHub LIVE </a></p>
+							<p><a href="http://r34744.github.com/ASD1305/index.html/"> GitHub LIVE </a></p>
 						</div>
 					</div>
 				</div>
 			<div data-role="footer" data-position="fixed" >
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#page1" >Home</a></li>
-						<li><a href="#form" >Add</a></li>
-						<li><a href="#stream" >Stream</a></li>
-						<li><a href="#page3" class="ui-btn-active">About</a></li>
+						<li><a href="#main" >Home</a></li>
+						<li><a href="#addTeams" >Teams</a></li>
+						<li><a href="#Race">Race</a></li>
+						<li><a href="#about" class="ui-btn-active">About</a></li>
 					</ul>
 				</div>   
 			</div>
