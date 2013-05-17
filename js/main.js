@@ -5,70 +5,90 @@
 // use .on() instead of .bind()
 //
 
+
+$('#home').on('pageinit', function(){
+	//code needed for home page goes here
+});	
+		
 $('#addTeams').on('pageinit', function(){
     
-    $(function(){
-        var operation = "A"; //"A"=Adding; "E"=Editing
-        var selected_index = -1; //Index of the selected list item
-        var teamNames = localStorage.getItem("teamNames");//Retrieve the stored data
-        teamNames = JSON.parse(teamNames); //Converts string to object
-        if(teamNames == null) //If there is no data, initialize an empty array
-        teamNames = [];
-    });
-
-  
-    var addTeams = function(){
-        var team = JSON.stringify({
-            Race1: 0,
-            Race2: 0
-        });
-        teamNames.push(team);
-        localStorage.setItem("teamNames", JSON.stringify(teamNames));
-        alert("The data was saved.");
-        return true;
+    var parseForm = function(data) {
+    console.log(data);   
     }
+    var errorlink = $('#errorlink');
+    var savedlink = $('#savedlink');
+    var teamNamesForm = $("#teamNamesForm");
     
-    var editTeams = function (){
-        teamNames[selected_index] = JSON.stringify({
-            Race1: 0,
-            Race2: 0
-        });//Alter the selected item on the table
-        localStorage.setItem("teamNames", JSON.stringify(teamNames));
-        alert("The data was edited.")
-        operation = "A"; //Return to default value
-        return true;
-    }
-    
-    var deleteTeams = function (){
-        teamNames.splice(selected_index, 1);
-        localStorage.setItem("teamNames", JSON.stringify(teamNames));
-        alert("teams deleted");
-    }
-
-    var listTeams = function (){       
-        $("#tblList").html("");
-        $("#tblList").html(
-        "<thead>"+
-        "   <tr>"+
-        "   <th></th>"+
-        "   <th>Name</th>"+
-        "   <th>Race #1</th>"+
-        "   <th>Race #2</th>"+
-        "   </tr>"+
-        "</thead>"+
-        "<tbody>"+
-        "</tbody>"
-        );
-        for(var i in teamNames){
-            var teamN = JSON.parse(teamNames[i]);
-            $("#tblList tbody").append("<tr>"+
-                                     "  <td><img src='edit.png' alt='Edit"+i+"' class='btnEdit'/><img src='delete.png' alt='Delete"+i+"' class='btnDelete'/></td>" +
-                                     "  <td>"+teamN.Race1+"</td>" +
-                                     "  <td>"+teamN.Race2+"</td>" +
-                                     "</tr>");
+    teamNamesForm.validate({
+        invalidHandler: function(form, validator){
+            var html='';
+            for (var key in validator.submitted){
+                var label = $('label[for^="' + key +'"]').not('[generated]');
+                var legend = label.closest('fieldset').find('.ui-controlgroup-label');
+                var fieldName = legend.length ? legend.text() : label.text();
+                html += '<li>' + fieldName + '</li>';
+            };
+           
+        },
+        submitHandler: function(key){
+            var data= teamNamesForm.serializeArray();
+            var html='';
+            var id;
+            if(!key) {
+                id = Math.floor(Math.random()*100000000);
+                //if same set it as the old.
+            }else{
+                id = key;
+            }
+            //parseForm(data);
+            localStorage.setItem(id, JSON.stringify(data));
+            alert("Teams are saved");
+            //html += '<li>' + "Good Job!" + '</li>';
+            //$("#saved").html(html);
         }
-    }
+        
+    });
+    
+    var clearLocal = function(){
+        localStorage.clear();
+        return false;
+    };
     
     
-});    
+});
+
+$('#Race').on('pageinit', function(){
+	$("#race1").prepend('<button id="team6" data-role="button" data-inline="true"></button>');
+	$("#race1").prepend('<button id="team5" data-role="button" data-inline="true"></button>');
+    $("#race1").prepend('<button id="team4" data-role="button" data-inline="true"></button>');
+    $("#race1").prepend('<button id="team3" data-role="button" data-inline="true"></button>');
+	$("#race1").prepend('<button id="team2" data-role="button" data-inline="true"></button>');
+    $("#race1").prepend('<button id="team1" data-role="button" data-inline="true"></button>');
+    
+    for (var i=0, j=localStorage.length; i<j; i++) {
+        var key = localStorage.key(i);
+        var value = localStorage.getItem(key);
+        var object = JSON.parse(value);
+    };
+    
+    console.log(object[0].value);
+    
+    var Team1 = "TEEM";
+    
+
+    $('button#team1').text(Team1);
+    $("button#team2").text("Team2");
+    
+    
+    
+        
+
+    
+    
+    
+    
+    
+});	
+
+
 
