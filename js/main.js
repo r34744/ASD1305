@@ -11,10 +11,18 @@ $('#home').on('pageinit', function(){
 });	
 		
 $('#addTeams').on('pageinit', function(){
+    var defaultFillData= function (){
+        for ( var n in json){
+            var id = Math.floor(Math.random()*100000000);
+            localStorage.setItem(id, JSON.stringify(json[n]));
+        };
+    };
+    
+    $("#loaddefault").click(defaultFillData());
     
     var parseForm = function(data) {
     console.log(data);   
-    }
+    };
     var errorlink = $('#errorlink');
     var savedlink = $('#savedlink');
     var teamNamesForm = $("#teamNamesForm");
@@ -42,9 +50,9 @@ $('#addTeams').on('pageinit', function(){
             }
             //parseForm(data);
             localStorage.setItem(id, JSON.stringify(data));
+            
             alert("Teams are saved");
-            //html += '<li>' + "Good Job!" + '</li>';
-            //$("#saved").html(html);
+            
         }
         
     });
@@ -58,12 +66,12 @@ $('#addTeams').on('pageinit', function(){
 });
 
 $('#Race').on('pageinit', function(){
-	$("#race1").prepend('<button id="team6" data-role="button" data-inline="true"></button>');
-	$("#race1").prepend('<button id="team5" data-role="button" data-inline="true"></button>');
-    $("#race1").prepend('<button id="team4" data-role="button" data-inline="true"></button>');
-    $("#race1").prepend('<button id="team3" data-role="button" data-inline="true"></button>');
-	$("#race1").prepend('<button id="team2" data-role="button" data-inline="true"></button>');
-    $("#race1").prepend('<button id="team1" data-role="button" data-inline="true"></button>');
+	$("#race1").prepend('<button id="team6" class="racebutton" data-role="button" data-inline="true"></button>');
+	$("#race1").prepend('<button id="team5" class="racebutton" data-role="button" data-inline="true"></button>');
+    $("#race1").prepend('<button id="team4" class="racebutton" data-role="button" data-inline="true"></button>');
+    $("#race1").prepend('<button id="team3" class="racebutton" data-role="button" data-inline="true"></button>');
+	$("#race1").prepend('<button id="team2" class="racebutton" data-role="button" data-inline="true"></button>');
+    $("#race1").prepend('<button id="team1" class="racebutton" data-role="button" data-inline="true"></button>');
     
     for (var i=0, j=localStorage.length; i<j; i++) {
         var key = localStorage.key(i);
@@ -71,24 +79,57 @@ $('#Race').on('pageinit', function(){
         var object = JSON.parse(value);
     };
     
-    console.log(object[0].value);
-    
-    var Team1 = "TEEM";
+    var Team1 = object[0].value;
+    var Team2 = object[1].value;
+    var Team3 = object[2].value;
+    var Team4 = object[3].value;
+    var Team5 = object[4].value;
+    var Team6 = object[5].value;
     
 
     $('button#team1').text(Team1);
-    $("button#team2").text("Team2");
+    $('button#team2').text(Team2);
+    $('button#team3').text(Team3);
+    $('button#team4').text(Team4);
+    $('button#team5').text(Team5);
+    $('button#team6').text(Team6);
+    
+    return false;
     
     
-    
-        
+});
 
+$('#Race2').on('pageinit', function(){
+	$("#race2").prepend('<button id="team6" class="racebutton" data-role="button" data-inline="true"></button>');
+	$("#race2").prepend('<button id="team5" class="racebutton" data-role="button" data-inline="true"></button>');
+    $("#race2").prepend('<button id="team4" class="racebutton" data-role="button" data-inline="true"></button>');
+    $("#race2").prepend('<button id="team3" class="racebutton" data-role="button" data-inline="true"></button>');
+	$("#race2").prepend('<button id="team2" class="racebutton" data-role="button" data-inline="true"></button>');
+    $("#race2").prepend('<button id="team1" class="racebutton" data-role="button" data-inline="true"></button>');
     
+    for (var i=0, j=localStorage.length; i<j; i++) {
+        var key = localStorage.key(i);
+        var value = localStorage.getItem(key);
+        var object = JSON.parse(value);
+    };
     
+    var Team1 = object[0].value;
+    var Team2 = object[1].value;
+    var Team3 = object[2].value;
+    var Team4 = object[3].value;
+    var Team5 = object[4].value;
+    var Team6 = object[5].value;
     
+
+    $('button#team1').text(Team1);
+    $('button#team2').text(Team2);
+    $('button#team3').text(Team3);
+    $('button#team4').text(Team4);
+    $('button#team5').text(Team5);
+    $('button#team6').text(Team6);
+    
+    return false;
     
     
 });	
-
-
 

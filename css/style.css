@@ -87,6 +87,17 @@ a{
     
 }
 
+.racebutton{
+    background-color: rgb(240,240,240);
+    width: 100px;
+	height: 100px;
+	margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    border-radius:15px;
+	font-weight: bold;
+    
+    
+}
 
 div ul li ul{
     background-color: white;
