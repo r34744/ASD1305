@@ -11,16 +11,33 @@ $('#home').on('pageinit', function(){
 });	
 		
 $('#addTeams').on('pageinit', function(){
-    //var defaultFillData= function (){
-        //for ( var n in json){
-           // var id = Math.floor(Math.random()*100000000);
-            //localStorage.setItem(id, JSON.stringify(json[n]));
-        //};
-    //};
+    
     var defaultFillData= function (){
+        $("#addTeams").innerHTML = "";
         var id = Math.floor(Math.random()*100000000);
             localStorage.setItem(id, JSON.stringify(json));
+        for (var i=0, j=localStorage.length; i<j; i++) {
+        var key = localStorage.key(i);
+        var value = localStorage.getItem(key);
+        var object = JSON.parse(value);
+        };
+        var Team1 = object[0].value;
+        var Team2 = object[1].value;
+        var Team3 = object[2].value;
+        var Team4 = object[3].value;
+        var Team5 = object[4].value;
+        var Team6 = object[5].value;
+        
+        $('#team1').value = Team1;
+        $('#team2').text(Team2);
+        $('#team3').text(Team3);
+        $('#team4').text(Team4);
+        $('#team5').text(Team5);
+        $('#team6').text(Team6);
+    
     };
+    
+    
     
     $("#loaddefault").on('click',defaultFillData);
     
