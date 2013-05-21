@@ -11,14 +11,18 @@ $('#home').on('pageinit', function(){
 });	
 		
 $('#addTeams').on('pageinit', function(){
+    //var defaultFillData= function (){
+        //for ( var n in json){
+           // var id = Math.floor(Math.random()*100000000);
+            //localStorage.setItem(id, JSON.stringify(json[n]));
+        //};
+    //};
     var defaultFillData= function (){
-        for ( var n in json){
-            var id = Math.floor(Math.random()*100000000);
-            localStorage.setItem(id, JSON.stringify(json[n]));
-        };
+        var id = Math.floor(Math.random()*100000000);
+            localStorage.setItem(id, JSON.stringify(json));
     };
     
-    $("#loaddefault").click(defaultFillData());
+    $("#loaddefault").on('click',defaultFillData);
     
     var parseForm = function(data) {
     console.log(data);   
@@ -41,16 +45,16 @@ $('#addTeams').on('pageinit', function(){
         submitHandler: function(key){
             var data= teamNamesForm.serializeArray();
             var html='';
-            var id;
+            
             if(!key) {
-                id = Math.floor(Math.random()*100000000);
+                var id = Math.floor(Math.random()*100000000);
                 //if same set it as the old.
+                localStorage.setItem(id, JSON.stringify(data));
             }else{
-                id = key;
+                var id = key;
+                localStorage.setItem(id, JSON.stringify(data));
             }
             //parseForm(data);
-            localStorage.setItem(id, JSON.stringify(data));
-            
             alert("Teams are saved");
             
         }
