@@ -28,12 +28,12 @@ $('#addTeams').on('pageinit', function(){
         var Team5 = object[4].value;
         var Team6 = object[5].value;
         
-        $('#team1').value = Team1;
-        $('#team2').text(Team2);
-        $('#team3').text(Team3);
-        $('#team4').text(Team4);
-        $('#team5').text(Team5);
-        $('#team6').text(Team6);
+        $('#team1').val(Team1);
+        $('#team2').val(Team2);
+        $('#team3').val(Team3);
+        $('#team4').val(Team4);
+        $('#team5').val(Team5);
+        $('#team6').val(Team6);
     
     };
     
@@ -87,12 +87,12 @@ $('#addTeams').on('pageinit', function(){
 });
 
 $('#Race').on('pageinit', function(){
-	$("#race1").prepend('<button id="team6" class="racebutton" data-role="button" data-inline="true"></button>');
-	$("#race1").prepend('<button id="team5" class="racebutton" data-role="button" data-inline="true"></button>');
-    $("#race1").prepend('<button id="team4" class="racebutton" data-role="button" data-inline="true"></button>');
-    $("#race1").prepend('<button id="team3" class="racebutton" data-role="button" data-inline="true"></button>');
-	$("#race1").prepend('<button id="team2" class="racebutton" data-role="button" data-inline="true"></button>');
-    $("#race1").prepend('<button id="team1" class="racebutton" data-role="button" data-inline="true"></button>');
+	$("#race1").prepend('<button id="team6finish" class="racebutton" data-role="button" data-inline="true"></button>');
+	$("#race1").prepend('<button id="team5finish" class="racebutton" data-role="button" data-inline="true"></button>');
+    $("#race1").prepend('<button id="team4finish" class="racebutton" data-role="button" data-inline="true"></button>');
+    $("#race1").prepend('<button id="team3finish" class="racebutton" data-role="button" data-inline="true"></button>');
+	$("#race1").prepend('<button id="team2finish" class="racebutton" data-role="button" data-inline="true"></button>');
+    $("#race1").prepend('<button id="team1finish" class="racebutton" data-role="button" data-inline="true"></button>');
     
     for (var i=0, j=localStorage.length; i<j; i++) {
         var key = localStorage.key(i);
@@ -108,12 +108,12 @@ $('#Race').on('pageinit', function(){
     var Team6 = object[5].value;
     
     
-    $('button#team1').text(Team1);
-    $('button#team2').text(Team2);
-    $('button#team3').text(Team3);
-    $('button#team4').text(Team4);
-    $('button#team5').text(Team5);
-    $('button#team6').text(Team6);
+    $('button#team1finish').text(Team1);
+    $('button#team2finish').text(Team2);
+    $('button#team3finish').text(Team3);
+    $('button#team4finish').text(Team4);
+    $('button#team5finish').text(Team5);
+    $('button#team6finish').text(Team6);
     
     var place = 0;
     var score = 0;
@@ -149,18 +149,18 @@ $('#Race').on('pageinit', function(){
         console.log(place);
     }; 
     
-    $("#team1,#team2,#team3,#team4,#team5,#team6").button(getScore);
+    $("#team1finish,#team2finish,#team3finish,#team4finish,#team5finish,#team6finish").button(getScore);
     
   
 });
 
 $('#Race2').on('pageinit', function(){
-	$("#race2").prepend('<button id="team6" class="racebutton" data-role="button" data-inline="true"></button>');
-	$("#race2").prepend('<button id="team5" class="racebutton" data-role="button" data-inline="true"></button>');
-    $("#race2").prepend('<button id="team4" class="racebutton" data-role="button" data-inline="true"></button>');
-    $("#race2").prepend('<button id="team3" class="racebutton" data-role="button" data-inline="true"></button>');
-	$("#race2").prepend('<button id="team2" class="racebutton" data-role="button" data-inline="true"></button>');
-    $("#race2").prepend('<button id="team1" class="racebutton" data-role="button" data-inline="true"></button>');
+	$("#race2").prepend('<button id="team6finish" class="racebutton" data-role="button" data-inline="true"></button>');
+	$("#race2").prepend('<button id="team5finish" class="racebutton" data-role="button" data-inline="true"></button>');
+    $("#race2").prepend('<button id="team4finish" class="racebutton" data-role="button" data-inline="true"></button>');
+    $("#race2").prepend('<button id="team3finish" class="racebutton" data-role="button" data-inline="true"></button>');
+	$("#race2").prepend('<button id="team2finish" class="racebutton" data-role="button" data-inline="true"></button>');
+    $("#race2").prepend('<button id="team1finish" class="racebutton" data-role="button" data-inline="true"></button>');
     
     for (var i=0, j=localStorage.length; i<j; i++) {
         var key = localStorage.key(i);
@@ -176,12 +176,12 @@ $('#Race2').on('pageinit', function(){
     var Team6 = object[5].value;
     
 
-    $('button#team1').text(Team1);
-    $('button#team2').text(Team2);
-    $('button#team3').text(Team3);
-    $('button#team4').text(Team4);
-    $('button#team5').text(Team5);
-    $('button#team6').text(Team6);
+    $('button#team1finish').text(Team1);
+    $('button#team2finish').text(Team2);
+    $('button#team3finish').text(Team3);
+    $('button#team4finish').text(Team4);
+    $('button#team5finish').text(Team5);
+    $('button#team6finish').text(Team6);
     
     return false;
     
