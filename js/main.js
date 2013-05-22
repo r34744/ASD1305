@@ -107,7 +107,7 @@ $('#Race').on('pageinit', function(){
     var Team5 = object[4].value;
     var Team6 = object[5].value;
     
-
+    
     $('button#team1').text(Team1);
     $('button#team2').text(Team2);
     $('button#team3').text(Team3);
@@ -115,9 +115,43 @@ $('#Race').on('pageinit', function(){
     $('button#team5').text(Team5);
     $('button#team6').text(Team6);
     
-    return false;
+    var place = 0;
+    var score = 0;
+    var getScore = function(){
+        
+        if(place === 0){
+            score = 10;
+            place = 1;
+        }else    
+            if(place === 1){
+                score = 9;
+                place = 2;
+            }else    
+                if(place === 2){
+                    score = 8;
+                    place = 3;
+                }else    
+                    if(place === 3){
+                        score = 7;
+                        place = 4;
+                    }else    
+                        if(place === 4){
+                            score = 6;
+                            place = 5;
+                        }else    
+                            if(place === 5){
+                            score = 5;
+                            place = 6;
+                        }
+        return score;
+        return place;
+        console.log(score);
+        console.log(place);
+    }; 
     
+    $("#team1,#team2,#team3,#team4,#team5,#team6").button(getScore);
     
+  
 });
 
 $('#Race2').on('pageinit', function(){
