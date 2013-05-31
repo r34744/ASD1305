@@ -9,7 +9,7 @@ h1{
     font-size: 20px;
     line-height: 25px;
     text-align: center;
-    color: white;
+    color: black;
    
 }
 
@@ -246,3 +246,15 @@ ul, menu, dir {
 	
 }
 
+#resulttable{
+	width: 100%;
+	background-color: white;
+    border-radius:5px;
+    margin:5px;
+    padding: 15px;
+    border: 1px;
+    border-color: black;
+	height: auto;
+	text-align: center;
+	
+}

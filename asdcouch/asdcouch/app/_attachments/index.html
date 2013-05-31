@@ -35,8 +35,8 @@
 			
 			<div data-role="content">
 				
-				<p> <a href="#addTeams" data-role="button" >Add Teams</a></p>
-				<p> <a href="#Race" data-role="button" >Race</a> </p>
+				<p> <a href="#races" data-role="button" >Past Races</a></p>
+				<p> <a href="#Race" data-role="button" >New Race</a> </p>
 				
 				
 			</div>
@@ -45,9 +45,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#main" class="ui-btn-active">Home</a></li>
-						<li><a href="#teams" >Teams</a></li>
-						<li><a href="#addTeams" >Add Teams</a></li>
-						<li><a href="#Race">Race</a></li>
+						<li><a href="#races" >Past Races</a></li>
+						<li><a href="#newRace" >New Race</a></li>
 						<li><a href="#about">About</a></li>
 					</ul>
 				</div>   
@@ -55,15 +54,15 @@
 		</div>	
 	
 	
-<!-- TEAMS -->
-		<div data-role="page" id="teams" data-add-back-btn="true">
+<!-- RACES -->
+		<div data-role="page" id="races" data-add-back-btn="true">
 			
 			<div data-role="header" data-position="fixed" >
 				<h1> <a href="index.html">X Race Day </a></h1>
 			</div>
 			
 			<div data-role="content">
-				<ul id="teamlist" data-role="listview">
+				<ul id="racelist" data-role="listview">
 				</ul>
 				
 			</div>
@@ -73,9 +72,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#main" >Home</a></li>
-						<li><a href="#teams" class="ui-btn-active">Teams</a></li>
-						<li><a href="#addTeams" >Add Teams</a></li>
-						<li><a href="#Race">Race</a></li>
+						<li><a href="#races" class="ui-btn-active">Past Races</a></li>
+						<li><a href="#newRace" >New Race</a></li>
 						<li><a href="#about">About</a></li>
 					</ul>
 				</div>   
@@ -87,8 +85,8 @@
 	
 				
 		
-<!-- ADD TEAMS -->
-		<div data-role="page" id="addTeams" data-add-back-btn="true">
+<!-- New Race -->
+		<div data-role="page" id="newRace" data-add-back-btn="true">
 			
 			<div data-role="header" data-position="fixed" >
 				<h1> <a href="index.html">X Race Day </a></h1>
@@ -98,18 +96,20 @@
 				
 				<form  id="teamNamesForm" action="">
 					<div data-role="fieldcontain">
-						<label for="teamName1">Team #1: *Required</label>
-						<input type="text" name="team1" id="team1" placeholder="Please input a team name" data-clear-btn="true" class="required"/>
-						<label for="teamName2">Team #2: *Required</label>
-						<input type="text" name="team2" id="team2" placeholder="Please input a team name" data-clear-btn="true" class="required"/>
-						<label for="teamName3">Team #3: *Required</label>
-						<input type="text" name="team3" id="team3" placeholder="Please input a team name" data-clear-btn="true" class="required"/>
-						<label for="teamName4">Team #4: *Required</label>
-						<input type="text" name="team4" id="team4" placeholder="Please input a team name" data-clear-btn="true" class="required"/>
-						<label for="teamName5">Team #5: *Required</label>
-						<input type="text" name="team5" id="team5" placeholder="Please input a team name" data-clear-btn="true" class="required"/>
-						<label for="teamName6">Team #6: *Required</label>
-						<input type="text" name="team6" id="team6" placeholder="Please input a team name" data-clear-btn="true" class="required"/>
+						<label for="_id">Date: *Required</label>
+						<input type="text" name="_id" id="_id" placeholder="Please input a date 00-00-0000 format" data-clear-btn="true" class="required"/>
+						<label for="teamname1">Team #1: *Required</label>
+						<input type="text" name="teamname1" id="teamname1" placeholder="Please input a team name" data-clear-btn="true" class="required"/>
+						<label for="teamname2">Team #2: *Required</label>
+						<input type="text" name="teamname2" id="teamname2" placeholder="Please input a team name" data-clear-btn="true" class="required"/>
+						<label for="teamname3">Team #3: *Required</label>
+						<input type="text" name="teamname3" id="teamname3" placeholder="Please input a team name" data-clear-btn="true" class="required"/>
+						<label for="teamname4">Team #4: *Required</label>
+						<input type="text" name="teamname4" id="teamname4" placeholder="Please input a team name" data-clear-btn="true" class="required"/>
+						<label for="teamname5">Team #5: *Required</label>
+						<input type="text" name="teamname5" id="teamname5" placeholder="Please input a team name" data-clear-btn="true" class="required"/>
+						<label for="teamname6">Team #6: *Required</label>
+						<input type="text" name="teamname6" id="teamname6" placeholder="Please input a team name" data-clear-btn="true" class="required"/>
 					</div>
 					<div data-role="fieldcontain">
 						<input type="submit" value="Submit" id="submitbutton" data-theme="b"/>
@@ -118,7 +118,7 @@
 						<input type="reset" value="Reset" id="resetbutton" data-mini="true" data-theme="a"/>
 					
 					</div>	
-				<a href="#loaddefault" id="loaddefault" >Load JSON Data</a>
+				<a href="#Race" id="gorace" >Go Race!</a>
 				<a href="#errors" id="errorlink" data-rel="dialog">Errors</a>
 				<a href="#saved" id="savedlink" data-rel="dialog">Saved</a>	
 					
@@ -131,9 +131,8 @@
 					<ul>
 						
 						<li><a href="#main" >Home</a></li>
-						<li><a href="#teams" ">Teams</a></li>
-						<li><a href="#addTeams" class="ui-btn-active">Add Teams</a></li>
-						<li><a href="#Race">Race</a></li>
+						<li><a href="#races" >Past Races</a></li>
+						<li><a href="#newRace" class="ui-btn-active">New Race</a></li>
 						<li><a href="#about">About</a></li>
 					</ul>
 				</div>   
@@ -170,9 +169,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#main" >Home</a></li>
-						<li><a href="#teams" ">Teams</a></li>
-						<li><a href="#addTeams" >Add Teams</a></li>
-						<li><a href="#Race" class="ui-btn-active">Race</a></li>
+						<li><a href="#races" >Past Races</a></li>
+						<li><a href="#newRace" class="ui-btn-active">New Race</a></li>
 						<li><a href="#about">About</a></li>
 					</ul>
 				</div>   
@@ -198,7 +196,7 @@
 					</div>
 					<div data-role="fieldcontain">
 						<input type="reset" value="Reset" id="raceresetbutton" data-mini="true" data-theme="a"/>
-					<p><a href="#Race" id="prevlink" >Previous Race</a> | 
+					<p><a href="#Race" id="prevlink" >Previous Race</a>  
 					<a href="#Results" id="resultslink" >Results</a></p>
 					</div>	
 			
@@ -210,9 +208,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#main" >Home</a></li>
-						<li><a href="#teams" ">Teams</a></li>
-						<li><a href="#addTeams" >Add Teams</a></li>
-						<li><a href="#Race" class="ui-btn-active">Race</a></li>
+						<li><a href="#races" >Past Races</a></li>
+						<li><a href="#newRace" class="ui-btn-active">New Race</a></li>
 						<li><a href="#about">About</a></li>
 					</ul>
 				</div>   
@@ -242,9 +239,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#main" >Home</a></li>
-						<li><a href="#teams" ">Teams</a></li>
-						<li><a href="#addTeams" >Add Teams</a></li>
-						<li><a href="#Race" class="ui-btn-active">Race</a></li>
+						<li><a href="#races" >Past Races</a></li>
+						<li><a href="#newRace" class="ui-btn-active">New Race</a></li>
 						<li><a href="#about">About</a></li>
 					</ul>
 				</div>   
@@ -277,9 +273,8 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#main" >Home</a></li>
-						<li><a href="#teams" ">Teams</a></li>
-						<li><a href="#addTeams" >Add Teams</a></li>
-						<li><a href="#Race" >Race</a></li>
+						<li><a href="#races" >Past Races</a></li>
+						<li><a href="#newRace" >New Race</a></li>
 						<li><a href="#about" class="ui-btn-active">About</a></li>
 					</ul>
 				</div>   
@@ -319,6 +314,7 @@
 		<script src="js/jquery.mobile-1.3.1.js"></script>
 		<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
 		<script src="js/json.js" type="text/javascript"></script>
+		<script src="js/jquery.couch.js" type="text/javascript"></script>
 		<script src="js/main.js"></script>
 		
 	</body>
